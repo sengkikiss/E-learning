@@ -116,7 +116,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
               margin: const EdgeInsets.only(right: 16),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: _remainingSeconds < 120 ? AppColors.errorLight.withOpacity(0.3) : AppColors.primaryContainer,
+                color: _remainingSeconds < 120 ? AppColors.errorLight.withValues(alpha: 0.3) : AppColors.primaryContainer,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Row(

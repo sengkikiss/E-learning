@@ -1321,7 +1321,7 @@ class FakeDatabase {
 
   // 7. Quizzes (10 Quizzes, 50 Questions total)
   static final List<QuizModel> quizzes = [
-    QuizModel(
+    const QuizModel(
       id: 'quiz_01',
       lessonId: 'les_01_02',
       courseId: 'crs_01',
@@ -1332,7 +1332,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_01_1',
           quizId: 'quiz_01',
           questionText: 'Which method should you use inside build() to reactively listen to provider changes?',
@@ -1341,7 +1341,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'ref.watch() subscribes the widget to updates and rebuilds it when the state changes.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_01_2',
           quizId: 'quiz_01',
           questionText: 'What is the primary benefit of Clean Architecture in Flutter apps?',
@@ -1355,7 +1355,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Clean Architecture strictly separates UI from data sources, allowing seamless backend swaps.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_01_3',
           quizId: 'quiz_01',
           questionText: 'Which Riverpod provider type is recommended for managing asynchronous states?',
@@ -1364,7 +1364,7 @@ class FakeDatabase {
           correctAnswerIndex: 2,
           explanation: 'AsyncNotifierProvider handles AsyncValue (loading, data, error) cleanly and safely.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_01_4',
           quizId: 'quiz_01',
           questionText: 'Where should API calls and Dio requests be executed?',
@@ -1378,7 +1378,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'DataSources are strictly responsible for network and database interactions.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_01_5',
           quizId: 'quiz_01',
           questionText: 'What does the autoDispose modifier do in Riverpod?',
@@ -1394,7 +1394,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_02',
       lessonId: 'les_02_02',
       courseId: 'crs_02',
@@ -1405,7 +1405,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_02_1',
           quizId: 'quiz_02',
           questionText: 'Which CSS property defines alignment along the main axis in Flexbox?',
@@ -1414,7 +1414,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'justify-content aligns items along the primary flex axis.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_02_2',
           quizId: 'quiz_02',
           questionText: 'What is the default flex-direction of a flex container?',
@@ -1423,7 +1423,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'By default, flex-direction is row.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_02_3',
           quizId: 'quiz_02',
           questionText: 'In CSS Grid, what unit represents a fraction of the available space?',
@@ -1432,7 +1432,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'The fr unit represents a fraction of free grid container space.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_02_4',
           quizId: 'quiz_02',
           questionText: 'Which property creates space between grid tracks or flex items?',
@@ -1441,7 +1441,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'gap defines the gutter between grid rows/columns or flex items.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_02_5',
           quizId: 'quiz_02',
           questionText: 'What media query feature is used for mobile-first responsive breakpoints?',
@@ -1452,7 +1452,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_03',
       lessonId: 'les_03_02',
       courseId: 'crs_03',
@@ -1463,7 +1463,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_03_1',
           quizId: 'quiz_03',
           questionText: 'Which join returns only matching records from both tables?',
@@ -1472,7 +1472,7 @@ class FakeDatabase {
           correctAnswerIndex: 2,
           explanation: 'INNER JOIN selects rows having matching values in both tables.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_03_2',
           quizId: 'quiz_03',
           questionText: 'Which clause filters records after grouping with GROUP BY?',
@@ -1481,7 +1481,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'HAVING filters aggregate results produced by GROUP BY.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_03_3',
           quizId: 'quiz_03',
           questionText: 'What does ACID stand for in database transaction theory?',
@@ -1495,7 +1495,7 @@ class FakeDatabase {
           correctAnswerIndex: 0,
           explanation: 'ACID guarantees database reliability: Atomicity, Consistency, Isolation, Durability.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_03_4',
           quizId: 'quiz_03',
           questionText: 'What type of index is most commonly used in PostgreSQL for equality and range queries?',
@@ -1504,7 +1504,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'B-Tree is the default and most versatile index type in relational databases.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_03_5',
           quizId: 'quiz_03',
           questionText: 'Which normal form eliminates transitive functional dependencies?',
@@ -1515,7 +1515,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_04',
       lessonId: 'les_04_02',
       courseId: 'crs_04',
@@ -1526,7 +1526,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_04_1',
           quizId: 'quiz_04',
           questionText: 'Why are NumPy operations significantly faster than standard Python lists?',
@@ -1540,7 +1540,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'NumPy stores elements contiguously and executes vectorized operations in compiled C.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_04_2',
           quizId: 'quiz_04',
           questionText: 'What function creates an identity matrix in NumPy?',
@@ -1549,7 +1549,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'np.eye(N) returns an N x N 2-D array with ones on the diagonal and zeros elsewhere.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_04_3',
           quizId: 'quiz_04',
           questionText: 'What is array broadcasting in NumPy?',
@@ -1563,7 +1563,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Broadcasting describes how NumPy treats arrays with different shapes during arithmetic operations.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_04_4',
           quizId: 'quiz_04',
           questionText: 'Which method returns the dimensions of an ndarray?',
@@ -1572,7 +1572,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: '.shape returns a tuple of integers indicating the size of the array along each axis.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_04_5',
           quizId: 'quiz_04',
           questionText: 'What Pandas method drops rows with null values?',
@@ -1583,7 +1583,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_05',
       lessonId: 'les_05_01',
       courseId: 'crs_05',
@@ -1594,7 +1594,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_05_1',
           quizId: 'quiz_05',
           questionText: 'What algorithm is used to compute gradients in neural networks via the chain rule?',
@@ -1603,7 +1603,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Backpropagation computes the gradient of the loss function with respect to weights using the chain rule.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_05_2',
           quizId: 'quiz_05',
           questionText: 'Which activation function maps values to a probability distribution between 0 and 1 summing to 1?',
@@ -1612,7 +1612,7 @@ class FakeDatabase {
           correctAnswerIndex: 2,
           explanation: 'Softmax turns raw logits into a normalized probability distribution over multiple classes.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_05_3',
           quizId: 'quiz_05',
           questionText: 'What is the purpose of a validation dataset in machine learning?',
@@ -1626,7 +1626,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'The validation set provides an unbiased evaluation while tuning model hyperparameters.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_05_4',
           quizId: 'quiz_05',
           questionText: 'What issue occurs when gradients become exponentially small in deep networks?',
@@ -1635,7 +1635,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Vanishing gradients prevent early layers from learning effectively in deep architectures.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_05_5',
           quizId: 'quiz_05',
           questionText: 'What does CNN stand for in deep learning?',
@@ -1651,7 +1651,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_06',
       lessonId: 'les_07_01',
       courseId: 'crs_07',
@@ -1662,7 +1662,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_06_1',
           quizId: 'quiz_06',
           questionText: 'How do Java Virtual Threads differ from traditional platform threads?',
@@ -1676,7 +1676,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Virtual threads are lightweight JVM-managed threads, allowing millions of concurrent tasks with minimal overhead.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_06_2',
           quizId: 'quiz_06',
           questionText: 'Which keyword creates an immutable data carrier class in Java 16+?',
@@ -1685,7 +1685,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'record classes in Java are transparent holders for immutable data.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_06_3',
           quizId: 'quiz_06',
           questionText: 'Which collection does NOT preserve the insertion order of elements?',
@@ -1694,7 +1694,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'HashSet does not make any guarantees as to the iteration order of the elements.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_06_4',
           quizId: 'quiz_06',
           questionText: 'What is the purpose of the Optional<T> class in Java?',
@@ -1708,7 +1708,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Optional provides a clear API to handle nullable returns safely.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_06_5',
           quizId: 'quiz_06',
           questionText: 'Which functional interface in java.util.function takes one argument and returns a boolean?',
@@ -1719,7 +1719,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_07',
       lessonId: 'les_09_01',
       courseId: 'crs_09',
@@ -1730,7 +1730,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_07_1',
           quizId: 'quiz_07',
           questionText: 'What is the correct sequence of the standard TCP three-way handshake?',
@@ -1739,7 +1739,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'TCP establishes connections using SYN -> SYN-ACK -> ACK.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_07_2',
           quizId: 'quiz_07',
           questionText: 'On which OSI layer does IP (Internet Protocol) operate?',
@@ -1748,7 +1748,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'IP is a Layer 3 Network layer protocol responsible for routing.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_07_3',
           quizId: 'quiz_07',
           questionText: 'Which protocol is connectionless and does NOT guarantee packet delivery or order?',
@@ -1757,7 +1757,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'UDP provides fast, unreliable, connectionless datagram delivery.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_07_4',
           quizId: 'quiz_07',
           questionText: 'What standard port does HTTPS utilize by default?',
@@ -1766,7 +1766,7 @@ class FakeDatabase {
           correctAnswerIndex: 2,
           explanation: 'Port 443 is the standard port for TLS/HTTPS encrypted web traffic.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_07_5',
           quizId: 'quiz_07',
           questionText: 'What type of attack floods a target with traffic to exhaust its resources?',
@@ -1777,7 +1777,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_08',
       lessonId: 'les_11_02',
       courseId: 'crs_11',
@@ -1788,7 +1788,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_08_1',
           quizId: 'quiz_08',
           questionText: 'In a stateless REST API with JWT, what should the SessionCreationPolicy be set to in Spring Security?',
@@ -1797,7 +1797,7 @@ class FakeDatabase {
           correctAnswerIndex: 3,
           explanation: 'SessionCreationPolicy.STATELESS ensures Spring does not maintain an HTTP session.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_08_2',
           quizId: 'quiz_08',
           questionText: 'What standard HTTP header is used to pass the Bearer JWT token in requests?',
@@ -1806,7 +1806,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'The Authorization header formatted as "Bearer <token>" is the standard.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_08_3',
           quizId: 'quiz_08',
           questionText: 'What are the three components of a JSON Web Token separated by periods?',
@@ -1820,7 +1820,7 @@ class FakeDatabase {
           correctAnswerIndex: 0,
           explanation: 'A JWT consists of Header (algorithm), Payload (claims), and Signature (cryptographic verification).',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_08_4',
           quizId: 'quiz_08',
           questionText: 'Which Spring annotation marks a class as providing bean definitions for application context?',
@@ -1829,7 +1829,7 @@ class FakeDatabase {
           correctAnswerIndex: 2,
           explanation: '@Configuration indicates that a class declares one or more @Bean methods.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_08_5',
           quizId: 'quiz_08',
           questionText: 'Which Spring Data interface provides built-in pagination and sorting out of the box?',
@@ -1840,7 +1840,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_09',
       lessonId: 'les_15_01',
       courseId: 'crs_15',
@@ -1851,7 +1851,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_09_1',
           quizId: 'quiz_09',
           questionText: 'Why should package manager install commands and cache cleanups be chained in a single RUN instruction?',
@@ -1865,7 +1865,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Each RUN creates an immutable layer; cleaning caches in the same command minimizes final image size.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_09_2',
           quizId: 'quiz_09',
           questionText: 'What is the purpose of multi-stage Docker builds?',
@@ -1879,7 +1879,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Multi-stage builds allow compiling in heavy build environments and copying only artifacts to minimal images.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_09_3',
           quizId: 'quiz_09',
           questionText: 'Which Docker directive defines the default executable to run when the container starts?',
@@ -1888,7 +1888,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'ENTRYPOINT specifies the command that will always be executed when the container starts.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_09_4',
           quizId: 'quiz_09',
           questionText: 'What is used in Docker to persist data independently of the container lifecycle?',
@@ -1897,7 +1897,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Volumes are stored on the host filesystem and persist beyond container deletion.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_09_5',
           quizId: 'quiz_09',
           questionText: 'What file excludes files and directories from the Docker build context?',
@@ -1908,7 +1908,7 @@ class FakeDatabase {
         ),
       ],
     ),
-    QuizModel(
+    const QuizModel(
       id: 'quiz_10',
       lessonId: 'les_17_01',
       courseId: 'crs_17',
@@ -1919,7 +1919,7 @@ class FakeDatabase {
       passingScore: 70.0,
       maximumAttempts: 3,
       questions: [
-        const QuestionModel(
+        QuestionModel(
           id: 'q_10_1',
           quizId: 'quiz_10',
           questionText: 'What is the average time complexity of searching an element in a balanced Binary Search Tree?',
@@ -1928,7 +1928,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Each step cuts the remaining search space in half, resulting in logarithmic O(log N) time.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_10_2',
           quizId: 'quiz_10',
           questionText: 'What is the worst-case search complexity in an unbalanced degenerate BST (linked list shape)?',
@@ -1937,7 +1937,7 @@ class FakeDatabase {
           correctAnswerIndex: 2,
           explanation: 'When a BST degenerates into a linear chain, searching takes O(N) linear time.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_10_3',
           quizId: 'quiz_10',
           questionText: 'Which tree traversal yields elements in sorted non-decreasing order for a BST?',
@@ -1946,7 +1946,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'Inorder traversal visits Left -> Root -> Right, which visits nodes in ascending order.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_10_4',
           quizId: 'quiz_10',
           questionText: 'What data structure is typically used to implement Breadth-First Search (BFS)?',
@@ -1955,7 +1955,7 @@ class FakeDatabase {
           correctAnswerIndex: 1,
           explanation: 'BFS uses a FIFO Queue to visit all nodes level by level.',
         ),
-        const QuestionModel(
+        QuestionModel(
           id: 'q_10_5',
           quizId: 'quiz_10',
           questionText: 'What is the time complexity of QuickSort in the average case?',

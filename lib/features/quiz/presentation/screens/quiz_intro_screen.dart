@@ -46,7 +46,7 @@ class QuizIntroScreen extends ConsumerWidget {
                             child: Container(
                               padding: const EdgeInsets.all(24),
                               decoration: BoxDecoration(
-                                color: AppColors.primary.withOpacity(0.12),
+                                color: AppColors.primary.withValues(alpha: 0.12),
                                 shape: BoxShape.circle,
                               ),
                               child: const Icon(
@@ -107,7 +107,7 @@ class QuizIntroScreen extends ConsumerWidget {
                           const SizedBox(height: 28),
 
                           // Rules
-                          Text('Important Rules', style: AppTextStyles.titleMedium),
+                          const Text('Important Rules', style: AppTextStyles.titleMedium),
                           const SizedBox(height: 10),
                           _buildRuleItem('You have ${quiz.timeLimitMinutes} minutes to complete all questions.'),
                           _buildRuleItem('Each question has only one correct answer.'),
@@ -117,7 +117,7 @@ class QuizIntroScreen extends ConsumerWidget {
 
                           // Past Attempts
                           if (hasAttempted) ...[
-                            Text('Previous Attempt', style: AppTextStyles.titleMedium),
+                            const Text('Previous Attempt', style: AppTextStyles.titleMedium),
                             const SizedBox(height: 8),
                             Container(
                               padding: const EdgeInsets.all(14),

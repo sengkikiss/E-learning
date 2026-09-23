@@ -31,7 +31,7 @@ class MaterialCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: _getFileTypeColor(material.type).withOpacity(0.15),
+              color: _getFileTypeColor(material.type).withValues(alpha: 0.15),
               borderRadius: AppRadius.smRadius,
             ),
             child: Icon(

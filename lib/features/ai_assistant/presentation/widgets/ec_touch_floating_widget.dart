@@ -61,7 +61,7 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
       double newY = (_position?.dy ?? 0) + details.delta.dy;
 
       // Clamping within safe area bounds
-      final minX = _edgePadding;
+      const minX = _edgePadding;
       final maxX = size.width - _buttonSize - _edgePadding;
       final minY = padding.top + _edgePadding;
       final maxY = size.height - padding.bottom - _buttonSize - 80;
@@ -126,13 +126,13 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF6366F1).withOpacity(0.55),
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.55),
                       blurRadius: 16,
                       spreadRadius: 2,
                       offset: const Offset(0, 4),
                     ),
                     BoxShadow(
-                      color: const Color(0xFF06B6D4).withOpacity(0.35),
+                      color: const Color(0xFF06B6D4).withValues(alpha: 0.35),
                       blurRadius: 24,
                       spreadRadius: 1,
                     ),
@@ -148,7 +148,7 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: Colors.white.withOpacity(0.35),
+                          color: Colors.white.withValues(alpha: 0.35),
                           width: 1.5,
                         ),
                       ),
@@ -168,9 +168,9 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
                         decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.4),
+                          color: Colors.black.withValues(alpha: 0.4),
                           borderRadius: BorderRadius.circular(6),
-                          border: Border.all(color: Colors.white.withOpacity(0.5), width: 0.5),
+                          border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 0.5),
                         ),
                         child: const Text(
                           'AI',

@@ -17,10 +17,9 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   final LocalStorage _localStorage;
 
   AuthLocalDataSourceImpl({
-    required SecureStorage secureStorage,
+    required this._secureStorage,
     required LocalStorage localStorage,
-  })  : _secureStorage = secureStorage,
-        _localStorage = localStorage;
+  })  : _localStorage = localStorage;
 
   @override
   Future<void> saveAuthData({required String token, required UserModel user}) async {

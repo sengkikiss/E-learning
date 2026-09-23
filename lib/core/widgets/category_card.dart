@@ -47,7 +47,7 @@ class CategoryCard extends StatelessWidget {
                   height: 34,
                   decoration: BoxDecoration(
                     color: isSelected
-                        ? Colors.white.withOpacity(0.2)
+                        ? Colors.white.withValues(alpha: 0.2)
                         : AppColors.primaryContainer,
                     shape: BoxShape.circle,
                   ),

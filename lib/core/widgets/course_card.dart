@@ -33,7 +33,7 @@ class CourseCard extends StatelessWidget {
         border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.2 : 0.04),
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -69,7 +69,7 @@ class CourseCard extends StatelessWidget {
                       ),
                       errorWidget: (context, url, error) => Container(
                         height: 135,
-                        color: AppColors.primaryLight.withOpacity(0.2),
+                        color: AppColors.primaryLight.withValues(alpha: 0.2),
                         child: const Icon(Icons.school_outlined, size: 40, color: AppColors.primary),
                       ),
                     ),
@@ -83,7 +83,7 @@ class CourseCard extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(6),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withValues(alpha: 0.9),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(

@@ -103,7 +103,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: (slide['gradient'] as LinearGradient).colors.first.withOpacity(0.35),
+                                color: (slide['gradient'] as LinearGradient).colors.first.withValues(alpha: 0.35),
                                 blurRadius: 24,
                                 offset: const Offset(0, 10),
                               ),

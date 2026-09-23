@@ -34,13 +34,13 @@ class QuizOptionCard extends StatelessWidget {
     if (isReviewMode) {
       if (isCorrect) {
         borderColor = AppColors.success;
-        backgroundColor = AppColors.successLight.withOpacity(0.3);
+        backgroundColor = AppColors.successLight.withValues(alpha: 0.3);
         textColor = AppColors.success;
         badgeBg = AppColors.success;
         badgeFg = Colors.white;
       } else if (isSelected && !isCorrect) {
         borderColor = AppColors.error;
-        backgroundColor = AppColors.errorLight.withOpacity(0.3);
+        backgroundColor = AppColors.errorLight.withValues(alpha: 0.3);
         textColor = AppColors.error;
         badgeBg = AppColors.error;
         badgeFg = Colors.white;
@@ -54,7 +54,7 @@ class QuizOptionCard extends StatelessWidget {
     } else {
       if (isSelected) {
         borderColor = AppColors.primary;
-        backgroundColor = isDark ? AppColors.primaryDark.withOpacity(0.3) : AppColors.primaryContainer.withOpacity(0.5);
+        backgroundColor = isDark ? AppColors.primaryDark.withValues(alpha: 0.3) : AppColors.primaryContainer.withValues(alpha: 0.5);
         textColor = AppColors.primary;
         badgeBg = AppColors.primary;
         badgeFg = Colors.white;

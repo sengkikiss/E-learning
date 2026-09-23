@@ -46,7 +46,7 @@ class SettingsScreen extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Preferences', style: AppTextStyles.titleMedium),
+              const Text('Preferences', style: AppTextStyles.titleMedium),
               const SizedBox(height: 10),
               Container(
                 decoration: BoxDecoration(
@@ -62,7 +62,7 @@ class SettingsScreen extends ConsumerWidget {
                       title: const Text('Dark Mode'),
                       subtitle: Text(themeMode == ThemeMode.dark ? 'Enabled' : 'Disabled'),
                       value: themeMode == ThemeMode.dark,
-                      activeColor: AppColors.primary,
+                      activeThumbColor: AppColors.primary,
                       onChanged: (val) {
                         ref.read(themeModeProvider.notifier).toggleTheme();
                       },
@@ -96,7 +96,7 @@ class SettingsScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 24),
 
-              Text('Account & Security', style: AppTextStyles.titleMedium),
+              const Text('Account & Security', style: AppTextStyles.titleMedium),
               const SizedBox(height: 10),
               Container(
                 decoration: BoxDecoration(
@@ -125,7 +125,7 @@ class SettingsScreen extends ConsumerWidget {
               const SizedBox(height: 24),
 
               // Backend & Architecture Info Card
-              Text('API Configuration', style: AppTextStyles.titleMedium),
+              const Text('API Configuration', style: AppTextStyles.titleMedium),
               const SizedBox(height: 10),
               Container(
                 padding: const EdgeInsets.all(16),

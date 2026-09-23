@@ -44,7 +44,7 @@ class QuizResultScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(28),
                 decoration: BoxDecoration(
-                  color: passed ? AppColors.successLight.withOpacity(0.3) : AppColors.errorLight.withOpacity(0.3),
+                  color: passed ? AppColors.successLight.withValues(alpha: 0.3) : AppColors.errorLight.withValues(alpha: 0.3),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(

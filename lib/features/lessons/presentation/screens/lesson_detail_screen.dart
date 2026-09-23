@@ -103,7 +103,7 @@ class _LessonDetailScreenState extends ConsumerState<LessonDetailScreen> {
                       Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [const Color(0xFF0F172A), Colors.black.withOpacity(0.8)],
+                            colors: [const Color(0xFF0F172A), Colors.black.withValues(alpha: 0.8)],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                           ),
@@ -131,7 +131,7 @@ class _LessonDetailScreenState extends ConsumerState<LessonDetailScreen> {
                                 child: Container(
                                   padding: const EdgeInsets.all(16),
                                   decoration: BoxDecoration(
-                                    color: AppColors.primary.withOpacity(0.85),
+                                    color: AppColors.primary.withValues(alpha: 0.85),
                                     shape: BoxShape.circle,
                                   ),
                                   child: Icon(
@@ -162,7 +162,7 @@ class _LessonDetailScreenState extends ConsumerState<LessonDetailScreen> {
                         right: 0,
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                          color: Colors.black.withOpacity(0.6),
+                          color: Colors.black.withValues(alpha: 0.6),
                           child: Row(
                             children: [
                               Text(
@@ -240,7 +240,7 @@ class _LessonDetailScreenState extends ConsumerState<LessonDetailScreen> {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                 decoration: BoxDecoration(
-                                  color: AppColors.successLight.withOpacity(0.3),
+                                  color: AppColors.successLight.withValues(alpha: 0.3),
                                   borderRadius: AppRadius.fullRadius,
                                 ),
                                 child: const Row(

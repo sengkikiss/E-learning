@@ -9,10 +9,9 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthLocalDataSource _localDataSource;
 
   AuthRepositoryImpl({
-    required AuthDataSource remoteDataSource,
+    required this._remoteDataSource,
     required AuthLocalDataSource localDataSource,
-  })  : _remoteDataSource = remoteDataSource,
-        _localDataSource = localDataSource;
+  })  : _localDataSource = localDataSource;
 
   @override
   Future<User> login({required String email, required String password}) async {

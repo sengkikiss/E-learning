@@ -56,7 +56,7 @@ class CompactCourseCard extends StatelessWidget {
                     errorWidget: (context, url, error) => Container(
                       width: 80,
                       height: 80,
-                      color: AppColors.primaryLight.withOpacity(0.2),
+                      color: AppColors.primaryLight.withValues(alpha: 0.2),
                       child: const Icon(Icons.school_outlined, color: AppColors.primary),
                     ),
                   ),

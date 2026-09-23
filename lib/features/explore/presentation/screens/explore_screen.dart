@@ -62,9 +62,9 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Text('Filter Courses', style: AppTextStyles.headlineSmall),
+                  const Text('Filter Courses', style: AppTextStyles.headlineSmall),
                   const SizedBox(height: 16),
-                  Text('Experience Level', style: AppTextStyles.labelLarge),
+                  const Text('Experience Level', style: AppTextStyles.labelLarge),
                   const SizedBox(height: 8),
                   Wrap(
                     spacing: 8,
@@ -82,7 +82,7 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen> {
                     }).toList(),
                   ),
                   const SizedBox(height: 20),
-                  Text('Sort By', style: AppTextStyles.labelLarge),
+                  const Text('Sort By', style: AppTextStyles.labelLarge),
                   const SizedBox(height: 8),
                   Wrap(
                     spacing: 8,
@@ -211,7 +211,7 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen> {
                           },
                         ),
                       );
-                    }).toList(),
+                    }),
                   ],
                 ),
               ),

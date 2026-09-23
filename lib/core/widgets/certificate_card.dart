@@ -32,10 +32,10 @@ class CertificateCard extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
         borderRadius: AppRadius.lgRadius,
-        border: Border.all(color: AppColors.primaryLight.withOpacity(0.3), width: 1.5),
+        border: Border.all(color: AppColors.primaryLight.withValues(alpha: 0.3), width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.08),
+            color: AppColors.primary.withValues(alpha: 0.08),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -69,7 +69,7 @@ class CertificateCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.1),
+                        color: AppColors.primary.withValues(alpha: 0.1),
                         borderRadius: AppRadius.fullRadius,
                       ),
                       child: Text(

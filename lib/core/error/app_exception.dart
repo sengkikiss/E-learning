@@ -10,36 +10,35 @@ class AppException implements Exception {
 }
 
 class NetworkException extends AppException {
-  const NetworkException([String message = 'Network connection error. Please check your internet.'])
-      : super(message, statusCode: -1);
+  const NetworkException([super.message = 'Network connection error. Please check your internet.'])
+      : super(statusCode: -1);
 }
 
 class ServerException extends AppException {
-  const ServerException([String message = 'Server error occurred. Please try again later.', int? statusCode])
-      : super(message, statusCode: statusCode ?? 500);
+  const ServerException([super.message = 'Server error occurred. Please try again later.', int? statusCode])
+      : super(statusCode: statusCode ?? 500);
 }
 
 class UnauthorizedException extends AppException {
-  const UnauthorizedException([String message = 'Session expired or unauthorized. Please login again.'])
-      : super(message, statusCode: 401);
+  const UnauthorizedException([super.message = 'Session expired or unauthorized. Please login again.'])
+      : super(statusCode: 401);
 }
 
 class ForbiddenException extends AppException {
-  const ForbiddenException([String message = 'You do not have permission to access this resource.'])
-      : super(message, statusCode: 403);
+  const ForbiddenException([super.message = 'You do not have permission to access this resource.'])
+      : super(statusCode: 403);
 }
 
 class NotFoundException extends AppException {
-  const NotFoundException([String message = 'Requested resource was not found.'])
-      : super(message, statusCode: 404);
+  const NotFoundException([super.message = 'Requested resource was not found.'])
+      : super(statusCode: 404);
 }
 
 class ValidationException extends AppException {
-  const ValidationException([String message = 'Invalid input provided.', dynamic details])
-      : super(message, statusCode: 422, details: details);
+  const ValidationException([super.message = 'Invalid input provided.', dynamic details])
+      : super(statusCode: 422, details: details);
 }
 
 class CacheException extends AppException {
-  const CacheException([String message = 'Local storage caching error.'])
-      : super(message);
+  const CacheException([super.message = 'Local storage caching error.']);
 }

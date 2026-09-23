@@ -73,9 +73,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
                 child: Container(
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.12),
+                    color: Colors.white.withValues(alpha: 0.12),
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white.withOpacity(0.2), width: 2),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 2),
                   ),
                   child: const Icon(
                     Icons.school_rounded,
@@ -102,7 +102,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with SingleTickerPr
                   Text(
                     'Empower your future with world-class skills',
                     style: AppTextStyles.bodyMedium.copyWith(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),
                 ],

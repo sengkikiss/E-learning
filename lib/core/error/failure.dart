@@ -20,28 +20,26 @@ abstract class Failure {
 }
 
 class ServerFailure extends Failure {
-  const ServerFailure(String message, {int? statusCode})
-      : super(message, statusCode: statusCode);
+  const ServerFailure(super.message, {super.statusCode});
 }
 
 class NetworkFailure extends Failure {
-  const NetworkFailure([String message = 'Network connection unavailable.'])
-      : super(message, statusCode: -1);
+  const NetworkFailure([super.message = 'Network connection unavailable.'])
+      : super(statusCode: -1);
 }
 
 class AuthFailure extends Failure {
-  const AuthFailure(String message, {int? statusCode = 401})
-      : super(message, statusCode: statusCode);
+  const AuthFailure(super.message, {super.statusCode = 401});
 }
 
 class ValidationFailure extends Failure {
-  const ValidationFailure(String message) : super(message, statusCode: 422);
+  const ValidationFailure(super.message) : super(statusCode: 422);
 }
 
 class NotFoundFailure extends Failure {
-  const NotFoundFailure(String message) : super(message, statusCode: 404);
+  const NotFoundFailure(super.message) : super(statusCode: 404);
 }
 
 class CacheFailure extends Failure {
-  const CacheFailure(String message) : super(message);
+  const CacheFailure(super.message);
 }

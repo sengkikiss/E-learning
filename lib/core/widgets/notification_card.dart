@@ -24,12 +24,12 @@ class NotificationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: notification.isRead
             ? (isDark ? AppColors.cardDark : Colors.white)
-            : (isDark ? AppColors.primaryDark.withOpacity(0.2) : AppColors.primaryContainer.withOpacity(0.4)),
+            : (isDark ? AppColors.primaryDark.withValues(alpha: 0.2) : AppColors.primaryContainer.withValues(alpha: 0.4)),
         borderRadius: AppRadius.mdRadius,
         border: Border.all(
           color: notification.isRead
               ? (isDark ? AppColors.borderDark : AppColors.borderLight)
-              : AppColors.primaryLight.withOpacity(0.5),
+              : AppColors.primaryLight.withValues(alpha: 0.5),
         ),
       ),
       child: Material(
@@ -45,7 +45,7 @@ class NotificationCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: _getNotificationColor(notification.type).withOpacity(0.15),
+                    color: _getNotificationColor(notification.type).withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(

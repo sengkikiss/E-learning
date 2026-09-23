@@ -52,7 +52,7 @@ class HistoryScreen extends ConsumerWidget {
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: _getActivityColor(activity.type).withOpacity(0.15),
+                          color: _getActivityColor(activity.type).withValues(alpha: 0.15),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(

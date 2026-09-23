@@ -71,7 +71,7 @@ class _AdminDashboardScreenState extends ConsumerState<AdminDashboardScreen> {
               const SizedBox(height: 24),
 
               // KPI Metrics
-              Text('Platform Overview', style: AppTextStyles.titleLarge),
+              const Text('Platform Overview', style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
               GridView.count(
                 crossAxisCount: 2,
@@ -90,7 +90,7 @@ class _AdminDashboardScreenState extends ConsumerState<AdminDashboardScreen> {
               const SizedBox(height: 28),
 
               // Backend Toggle
-              Text('Backend Integration Controls', style: AppTextStyles.titleLarge),
+              const Text('Backend Integration Controls', style: AppTextStyles.titleLarge),
               const SizedBox(height: 10),
               Container(
                 padding: const EdgeInsets.all(16),
@@ -109,7 +109,7 @@ class _AdminDashboardScreenState extends ConsumerState<AdminDashboardScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Use Fake REST API', style: AppTextStyles.titleSmall),
+                              const Text('Use Fake REST API', style: AppTextStyles.titleSmall),
                               const SizedBox(height: 4),
                               Text(
                                 'Toggle to switch between FakeDatabase and Spring Boot endpoints',
@@ -120,7 +120,7 @@ class _AdminDashboardScreenState extends ConsumerState<AdminDashboardScreen> {
                         ),
                         Switch(
                           value: AppConfig.useFakeApi,
-                          activeColor: AppColors.primary,
+                          activeThumbColor: AppColors.primary,
                           onChanged: (val) {
                             setState(() {
                               AppConfig.useFakeApi = val;

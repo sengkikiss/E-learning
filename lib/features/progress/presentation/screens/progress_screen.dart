@@ -56,7 +56,7 @@ class ProgressScreen extends ConsumerWidget {
                       borderRadius: AppRadius.xlRadius,
                       boxShadow: [
                         BoxShadow(
-                          color: (isComplete ? AppColors.success : AppColors.primary).withOpacity(0.25),
+                          color: (isComplete ? AppColors.success : AppColors.primary).withValues(alpha: 0.25),
                           blurRadius: 16,
                           offset: const Offset(0, 6),
                         ),
@@ -81,14 +81,14 @@ class ProgressScreen extends ConsumerWidget {
                         Text(
                           course?.title ?? 'Course Progress',
                           textAlign: TextAlign.center,
-                          style: AppTextStyles.bodyMedium.copyWith(color: Colors.white.withOpacity(0.9)),
+                          style: AppTextStyles.bodyMedium.copyWith(color: Colors.white.withValues(alpha: 0.9)),
                         ),
                       ],
                     ),
                   ),
                   const SizedBox(height: 28),
 
-                  Text('Breakdown by Milestones', style: AppTextStyles.titleLarge),
+                  const Text('Breakdown by Milestones', style: AppTextStyles.titleLarge),
                   const SizedBox(height: 14),
 
                   // 1. Lessons Progress (60% weight)
@@ -132,9 +132,9 @@ class ProgressScreen extends ConsumerWidget {
                     Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
-                        color: AppColors.warningLight.withOpacity(0.2),
+                        color: AppColors.warningLight.withValues(alpha: 0.2),
                         borderRadius: AppRadius.lgRadius,
-                        border: Border.all(color: AppColors.warning.withOpacity(0.5)),
+                        border: Border.all(color: AppColors.warning.withValues(alpha: 0.5)),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

@@ -37,7 +37,7 @@ class ProfileScreen extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Text('Switch Demo Role', style: AppTextStyles.headlineSmall),
+              const Text('Switch Demo Role', style: AppTextStyles.headlineSmall),
               const SizedBox(height: 8),
               const Text('Switch user roles instantly to test role-guarded features:'),
               const SizedBox(height: 20),

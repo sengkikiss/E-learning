@@ -24,7 +24,7 @@ class LessonCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: isCurrent
-            ? (isDark ? AppColors.primaryDark.withOpacity(0.3) : AppColors.primaryContainer.withOpacity(0.5))
+            ? (isDark ? AppColors.primaryDark.withValues(alpha: 0.3) : AppColors.primaryContainer.withValues(alpha: 0.5))
             : (isDark ? AppColors.cardDark : Colors.white),
         borderRadius: AppRadius.mdRadius,
         border: Border.all(
@@ -49,9 +49,9 @@ class LessonCard extends StatelessWidget {
                   height: 36,
                   decoration: BoxDecoration(
                     color: lesson.isCompleted
-                        ? AppColors.successLight.withOpacity(0.4)
+                        ? AppColors.successLight.withValues(alpha: 0.4)
                         : (lesson.isLocked
-                            ? Colors.grey.withOpacity(0.2)
+                            ? Colors.grey.withValues(alpha: 0.2)
                             : (isCurrent ? AppColors.primary : AppColors.primaryContainer)),
                     shape: BoxShape.circle,
                   ),

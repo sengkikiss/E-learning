@@ -41,7 +41,7 @@ void main() {
     });
 
     test('saveCourse and removeSavedCourse updates saved courses list', () async {
-      final courseId = 'crs_02';
+      const courseId = 'crs_02';
       await repository.saveCourse(courseId);
       var saved = await repository.getSavedCourses();
       expect(saved.any((c) => c.id == courseId), isTrue);

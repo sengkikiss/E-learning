@@ -45,7 +45,7 @@ class QuizReviewScreen extends ConsumerWidget {
                     color: isDark ? AppColors.cardDark : Colors.white,
                     borderRadius: AppRadius.lgRadius,
                     border: Border.all(
-                      color: isCorrect ? AppColors.success.withOpacity(0.4) : AppColors.error.withOpacity(0.4),
+                      color: isCorrect ? AppColors.success.withValues(alpha: 0.4) : AppColors.error.withValues(alpha: 0.4),
                       width: 1.5,
                     ),
                   ),
@@ -65,7 +65,7 @@ class QuizReviewScreen extends ConsumerWidget {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                             decoration: BoxDecoration(
-                              color: isCorrect ? AppColors.successLight.withOpacity(0.3) : AppColors.errorLight.withOpacity(0.3),
+                              color: isCorrect ? AppColors.successLight.withValues(alpha: 0.3) : AppColors.errorLight.withValues(alpha: 0.3),
                               borderRadius: AppRadius.fullRadius,
                             ),
                             child: Row(
@@ -121,9 +121,9 @@ class QuizReviewScreen extends ConsumerWidget {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: AppColors.infoLight.withOpacity(0.15),
+                          color: AppColors.infoLight.withValues(alpha: 0.15),
                           borderRadius: AppRadius.mdRadius,
-                          border: Border.all(color: AppColors.info.withOpacity(0.2)),
+                          border: Border.all(color: AppColors.info.withValues(alpha: 0.2)),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

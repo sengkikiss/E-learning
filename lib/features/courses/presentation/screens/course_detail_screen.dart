@@ -83,7 +83,7 @@ class _CourseDetailScreenState extends ConsumerState<CourseDetailScreen> with Si
                         Container(
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
-                              colors: [Colors.transparent, Colors.black.withOpacity(0.8)],
+                              colors: [Colors.transparent, Colors.black.withValues(alpha: 0.8)],
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                             ),
@@ -102,7 +102,7 @@ class _CourseDetailScreenState extends ConsumerState<CourseDetailScreen> with Si
                             child: Container(
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.85),
+                                color: Colors.white.withValues(alpha: 0.85),
                                 shape: BoxShape.circle,
                               ),
                               child: const Icon(Icons.play_arrow_rounded, color: AppColors.primary, size: 36),
@@ -192,7 +192,7 @@ class _CourseDetailScreenState extends ConsumerState<CourseDetailScreen> with Si
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Course Description', style: AppTextStyles.titleLarge),
+                            const Text('Course Description', style: AppTextStyles.titleLarge),
                             const SizedBox(height: 8),
                             Text(
                               course.description,
@@ -202,7 +202,7 @@ class _CourseDetailScreenState extends ConsumerState<CourseDetailScreen> with Si
                               ),
                             ),
                             const SizedBox(height: 20),
-                            Text('What You Will Learn', style: AppTextStyles.titleLarge),
+                            const Text('What You Will Learn', style: AppTextStyles.titleLarge),
                             const SizedBox(height: 10),
                             ...[
                               'Clean Architecture & SOLID design principles',

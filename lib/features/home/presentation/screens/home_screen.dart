@@ -82,7 +82,7 @@ class HomeScreen extends ConsumerWidget {
                                   Container(
                                     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                     decoration: BoxDecoration(
-                                      color: AppColors.primary.withOpacity(0.12),
+                                      color: AppColors.primary.withValues(alpha: 0.12),
                                       borderRadius: AppRadius.fullRadius,
                                     ),
                                     child: Text(
@@ -165,7 +165,7 @@ class HomeScreen extends ConsumerWidget {
                       borderRadius: AppRadius.lgRadius,
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.primary.withOpacity(0.25),
+                          color: AppColors.primary.withValues(alpha: 0.25),
                           blurRadius: 16,
                           offset: const Offset(0, 6),
                         ),
@@ -180,7 +180,7 @@ class HomeScreen extends ConsumerWidget {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                 decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.2),
+                                  color: Colors.white.withValues(alpha: 0.2),
                                   borderRadius: AppRadius.smRadius,
                                 ),
                                 child: const Text(

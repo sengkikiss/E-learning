@@ -76,7 +76,7 @@ class InstructorDashboardScreen extends ConsumerWidget {
               const SizedBox(height: 28),
 
               // Quick Actions
-              Text('Instructor Quick Actions', style: AppTextStyles.titleLarge),
+              const Text('Instructor Quick Actions', style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
               Row(
                 children: [
@@ -105,7 +105,7 @@ class InstructorDashboardScreen extends ConsumerWidget {
               const SizedBox(height: 28),
 
               // Authored Courses
-              Text('My Authored Courses', style: AppTextStyles.titleLarge),
+              const Text('My Authored Courses', style: AppTextStyles.titleLarge),
               const SizedBox(height: 12),
               coursesAsync.when(
                 data: (courses) {

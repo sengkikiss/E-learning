@@ -75,7 +75,7 @@ class AssignmentDetailScreen extends ConsumerWidget {
                           const SizedBox(height: 24),
 
                           // Instructions Box
-                          Text('Instructions & Requirements', style: AppTextStyles.titleMedium),
+                          const Text('Instructions & Requirements', style: AppTextStyles.titleMedium),
                           const SizedBox(height: 8),
                           Container(
                             width: double.infinity,
@@ -97,15 +97,15 @@ class AssignmentDetailScreen extends ConsumerWidget {
 
                           // Feedback if graded
                           if (isGraded) ...[
-                            Text('Instructor Review & Feedback', style: AppTextStyles.titleMedium),
+                            const Text('Instructor Review & Feedback', style: AppTextStyles.titleMedium),
                             const SizedBox(height: 8),
                             Container(
                               width: double.infinity,
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
-                                color: AppColors.successLight.withOpacity(0.2),
+                                color: AppColors.successLight.withValues(alpha: 0.2),
                                 borderRadius: AppRadius.mdRadius,
-                                border: Border.all(color: AppColors.success.withOpacity(0.4)),
+                                border: Border.all(color: AppColors.success.withValues(alpha: 0.4)),
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

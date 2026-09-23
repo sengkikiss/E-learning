@@ -72,7 +72,7 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, -4),
           ),
@@ -86,7 +86,7 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
             width: 40,
             height: 4,
             decoration: BoxDecoration(
-              color: Colors.grey.withOpacity(0.3),
+              color: Colors.grey.withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -108,7 +108,7 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xFF6366F1).withOpacity(0.4),
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.4),
                         blurRadius: 10,
                         offset: const Offset(0, 3),
                       ),
@@ -128,7 +128,7 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: AppColors.primary.withOpacity(0.12),
+                              color: AppColors.primary.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
@@ -218,8 +218,8 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    backgroundColor: isDark ? const Color(0xFF1E2333) : AppColors.primaryContainer.withOpacity(0.5),
-                    side: BorderSide(color: AppColors.primary.withOpacity(0.2)),
+                    backgroundColor: isDark ? const Color(0xFF1E2333) : AppColors.primaryContainer.withValues(alpha: 0.5),
+                    side: BorderSide(color: AppColors.primary.withValues(alpha: 0.2)),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     onPressed: () => _sendMessage(prompt),
                   );
@@ -263,8 +263,8 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                   ),
                   const SizedBox(width: 8),
                   Container(
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
                         colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
                       ),
                       shape: BoxShape.circle,
@@ -346,7 +346,7 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.copy_rounded, size: 13, color: AppColors.textMutedLight),
+                          const Icon(Icons.copy_rounded, size: 13, color: AppColors.textMutedLight),
                           const SizedBox(width: 4),
                           Text(
                             'Copy',
@@ -415,7 +415,7 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
           width: 7,
           height: 7,
           decoration: BoxDecoration(
-            color: AppColors.primary.withOpacity(val),
+            color: AppColors.primary.withValues(alpha: val),
             shape: BoxShape.circle,
           ),
         );

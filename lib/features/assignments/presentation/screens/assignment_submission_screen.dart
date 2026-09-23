@@ -118,7 +118,7 @@ class _AssignmentSubmissionScreenState extends ConsumerState<AssignmentSubmissio
                 const SizedBox(height: 20),
 
                 // File Upload Box
-                Text('Upload Solution Archive or Document', style: AppTextStyles.labelLarge),
+                const Text('Upload Solution Archive or Document', style: AppTextStyles.labelLarge),
                 const SizedBox(height: 8),
                 InkWell(
                   onTap: _simulatePickFile,
