@@ -2,7 +2,7 @@ class AiMessage {
   final String id;
   final String text;
   final bool isUser;
-  final DateTime timestamp;
+   final DateTime timestamp;
   final List<String> suggestedPrompts;
 
   const AiMessage({
