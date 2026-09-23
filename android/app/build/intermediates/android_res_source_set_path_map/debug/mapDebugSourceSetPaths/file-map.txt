@@ -1,0 +1,7 @@
+com.onlinelearning.app.e_learning.app-pngs-0 D:\Education\Flutter\E-learning\android\app\build\generated\res\pngs\debug
+com.onlinelearning.app.e_learning.app-updated_navigation_xml-1 D:\Education\Flutter\E-learning\android\app\build\generated\updated_navigation_xml\debug
+com.onlinelearning.app.e_learning.app-packageDebugResources-2 D:\Education\Flutter\E-learning\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.onlinelearning.app.e_learning.app-packageDebugResources-3 D:\Education\Flutter\E-learning\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.onlinelearning.app.e_learning.app-debug-4 D:\Education\Flutter\E-learning\android\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.onlinelearning.app.e_learning.app-debug-5 D:\Education\Flutter\E-learning\android\app\src\debug\res
+com.onlinelearning.app.e_learning.app-main-6 D:\Education\Flutter\E-learning\android\app\src\main\res
