@@ -36,6 +36,7 @@ class AppSearchBar extends StatelessWidget {
         Expanded(
           child: Container(
             height: 48,
+            clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
               color: isDark ? AppColors.surfaceDark : Colors.white,
               borderRadius: AppRadius.lgRadius,
@@ -47,10 +48,14 @@ class AppSearchBar extends StatelessWidget {
               onTap: onTap,
               onChanged: onChanged,
               onSubmitted: onSubmitted,
+              textAlignVertical: TextAlignVertical.center,
               style: AppTextStyles.bodyMedium.copyWith(
                 color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
               ),
               decoration: InputDecoration(
+                isDense: true,
+                filled: false,
+                fillColor: Colors.transparent,
                 hintText: hintText,
                 hintStyle: AppTextStyles.bodyMedium.copyWith(
                   color: isDark ? AppColors.textMutedDark : AppColors.textMutedLight,
@@ -76,20 +81,20 @@ class AppSearchBar extends StatelessWidget {
         ),
         if (showFilterButton) ...[
           const SizedBox(width: 10),
-          InkWell(
-            onTap: onFilterPressed,
-            borderRadius: AppRadius.mdRadius,
-            child: Container(
-              height: 48,
-              width: 48,
-              decoration: BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: AppRadius.mdRadius,
-              ),
-              child: const Icon(
-                Icons.tune_rounded,
-                color: Colors.white,
-                size: 20,
+          Material(
+            color: AppColors.primary,
+            borderRadius: AppRadius.lgRadius,
+            child: InkWell(
+              onTap: onFilterPressed,
+              borderRadius: AppRadius.lgRadius,
+              child: const SizedBox(
+                height: 48,
+                width: 48,
+                child: Icon(
+                  Icons.tune_rounded,
+                  color: Colors.white,
+                  size: 20,
+                ),
               ),
             ),
           ),

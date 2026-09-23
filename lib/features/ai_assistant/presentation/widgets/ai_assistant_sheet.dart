@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_text_styles.dart';
 import '../../../../core/widgets/app_snackbar.dart';
@@ -25,9 +26,19 @@ class AiAssistantSheet extends ConsumerStatefulWidget {
 class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
+  late final FocusNode _focusNode;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode = FocusNode()..addListener(() {
+      if (mounted) setState(() {});
+    });
+  }
 
   @override
   void dispose() {
+    _focusNode.dispose();
     _controller.dispose();
     _scrollController.dispose();
     super.dispose();
@@ -114,7 +125,14 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                       ),
                     ],
                   ),
-                  child: const Icon(Icons.auto_awesome_rounded, color: Colors.white, size: 22),
+                  child: Center(
+                    child: Lottie.asset(
+                      'assets/animetions/Ai.json',
+                      width: 32,
+                      height: 32,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -241,21 +259,38 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                 children: [
                   Expanded(
                     child: Container(
+                      clipBehavior: Clip.antiAlias,
                       decoration: BoxDecoration(
                         color: isDark ? const Color(0xFF131722) : Colors.white,
                         borderRadius: BorderRadius.circular(24),
-                        border: Border.all(color: isDark ? AppColors.borderDark : AppColors.borderLight),
+                        border: Border.all(
+                          color: _focusNode.hasFocus
+                              ? AppColors.primary
+                              : (isDark ? AppColors.borderDark : AppColors.borderLight),
+                          width: _focusNode.hasFocus ? 1.6 : 1.0,
+                        ),
                       ),
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: TextField(
                         controller: _controller,
+                        focusNode: _focusNode,
+                        textAlignVertical: TextAlignVertical.center,
                         style: AppTextStyles.bodyMedium.copyWith(
                           color: isDark ? AppColors.textPrimaryDark : AppColors.textPrimaryLight,
                         ),
                         decoration: InputDecoration(
+                          isDense: true,
+                          filled: false,
+                          fillColor: Colors.transparent,
                           hintText: 'Ask EduAI anything about your courses...',
                           hintStyle: AppTextStyles.bodySmall.copyWith(color: AppColors.textMutedLight),
                           border: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          focusedErrorBorder: InputBorder.none,
+                          contentPadding: const EdgeInsets.symmetric(vertical: 13),
                         ),
                         onSubmitted: (val) => _sendMessage(val),
                       ),
@@ -303,7 +338,14 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
                 ),
                 shape: BoxShape.circle,
               ),
-              child: const Center(child: Icon(Icons.auto_awesome, color: Colors.white, size: 16)),
+              child: Center(
+                child: Lottie.asset(
+                  'assets/animetions/Ai.json',
+                  width: 24,
+                  height: 24,
+                  fit: BoxFit.contain,
+                ),
+              ),
             ),
             const SizedBox(width: 8),
           ],
@@ -380,7 +422,14 @@ class _AiAssistantSheetState extends ConsumerState<AiAssistantSheet> {
               ),
               shape: BoxShape.circle,
             ),
-            child: const Center(child: Icon(Icons.auto_awesome, color: Colors.white, size: 16)),
+            child: Center(
+              child: Lottie.asset(
+                'assets/animetions/Ai.json',
+                width: 24,
+                height: 24,
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
           const SizedBox(width: 8),
           Container(

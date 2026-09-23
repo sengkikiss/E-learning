@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'ai_assistant_sheet.dart';
 
 class EcTouchFloatingWidget extends StatefulWidget {
@@ -103,6 +104,7 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
           left: pos.dx,
           top: pos.dy,
           child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onPanUpdate: _onPanUpdate,
             onPanEnd: _onPanEnd,
             onTap: () {
@@ -110,80 +112,16 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
             },
             child: ScaleTransition(
               scale: _pulseAnimation,
-              child: Container(
+              child: SizedBox(
                 width: _buttonSize,
                 height: _buttonSize,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xFF6366F1), // Indigo
-                      Color(0xFF8B5CF6), // Purple
-                      Color(0xFF06B6D4), // Cyan
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+                child: Center(
+                  child: Lottie.asset(
+                    'assets/animetions/Ai.json',
+                    width: _buttonSize,
+                    height: _buttonSize,
+                    fit: BoxFit.contain,
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF6366F1).withOpacity(0.55),
-                      blurRadius: 16,
-                      spreadRadius: 2,
-                      offset: const Offset(0, 4),
-                    ),
-                    BoxShadow(
-                      color: const Color(0xFF06B6D4).withOpacity(0.35),
-                      blurRadius: 24,
-                      spreadRadius: 1,
-                    ),
-                  ],
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Outer glassmorphism ring
-                    Container(
-                      width: _buttonSize - 4,
-                      height: _buttonSize - 4,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white.withOpacity(0.35),
-                          width: 1.5,
-                        ),
-                      ),
-                    ),
-
-                    // AI Icon
-                    const Icon(
-                      Icons.auto_awesome_rounded,
-                      color: Colors.white,
-                      size: 26,
-                    ),
-
-                    // "AI" mini pill badge on top-right
-                    Positioned(
-                      top: 4,
-                      right: 4,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(6),
-                          border: Border.all(color: Colors.white.withOpacity(0.5), width: 0.5),
-                        ),
-                        child: const Text(
-                          'AI',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 8,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),
