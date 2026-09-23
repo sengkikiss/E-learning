@@ -1,0 +1,5 @@
+com.onlinelearning.app.e_learning
+drawable launch_background
+mipmap ic_launcher
+style LaunchTheme
+style NormalTheme

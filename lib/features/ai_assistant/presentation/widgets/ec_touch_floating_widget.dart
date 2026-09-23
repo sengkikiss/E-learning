@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'ai_assistant_sheet.dart';
 
 class EcTouchFloatingWidget extends StatefulWidget {
@@ -103,6 +104,7 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
           left: pos.dx,
           top: pos.dy,
           child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onPanUpdate: _onPanUpdate,
             onPanEnd: _onPanEnd,
             onTap: () {
@@ -110,7 +112,7 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
             },
             child: ScaleTransition(
               scale: _pulseAnimation,
-              child: Container(
+              child: SizedBox(
                 width: _buttonSize,
                 height: _buttonSize,
                 decoration: BoxDecoration(
@@ -126,13 +128,13 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.55),
+                      color: const Color(0xFF6366F1).withOpacity(0.55),
                       blurRadius: 16,
                       spreadRadius: 2,
                       offset: const Offset(0, 4),
                     ),
                     BoxShadow(
-                      color: const Color(0xFF06B6D4).withValues(alpha: 0.35),
+                      color: const Color(0xFF06B6D4).withOpacity(0.35),
                       blurRadius: 24,
                       spreadRadius: 1,
                     ),
@@ -148,7 +150,7 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.35),
+                          color: Colors.white.withOpacity(0.35),
                           width: 1.5,
                         ),
                       ),
@@ -168,9 +170,9 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
                         decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.4),
+                          color: Colors.black.withOpacity(0.4),
                           borderRadius: BorderRadius.circular(6),
-                          border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 0.5),
+                          border: Border.all(color: Colors.white.withOpacity(0.5), width: 0.5),
                         ),
                         child: const Text(
                           'AI',
