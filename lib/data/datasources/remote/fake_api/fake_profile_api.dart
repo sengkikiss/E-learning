@@ -29,6 +29,7 @@ class FakeProfileDataSource implements ProfileDataSource {
     required String fullName,
     required String phoneNumber,
     required String educationLevel,
+    String? dateOfBirth,
     String? profilePhoto,
   }) async {
     final response = await _client.request<StudentModel>(
@@ -41,7 +42,7 @@ class FakeProfileDataSource implements ProfileDataSource {
           studentId: current.studentId,
           fullName: fullName,
           gender: current.gender,
-          dateOfBirth: current.dateOfBirth,
+          dateOfBirth: dateOfBirth ?? current.dateOfBirth,
           phoneNumber: phoneNumber,
           email: current.email,
           profilePhoto: profilePhoto ?? current.profilePhoto,

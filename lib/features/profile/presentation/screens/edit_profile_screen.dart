@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_spacing.dart';
 import '../../../../core/utils/validators.dart';
@@ -21,6 +22,8 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
   late TextEditingController _nameController;
   late TextEditingController _phoneController;
   late TextEditingController _educationController;
+  late TextEditingController _dobController;
+  DateTime? _selectedDate;
   bool _isLoading = false;
 
   @override
@@ -30,6 +33,12 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     _nameController = TextEditingController(text: profile?.fullName ?? 'Dara Somnang');
     _phoneController = TextEditingController(text: profile?.phoneNumber ?? '+855 12 345 678');
     _educationController = TextEditingController(text: profile?.educationLevel ?? 'Bachelor of Computer Science');
+
+    final initialDob = profile?.dateOfBirth ?? '';
+    _dobController = TextEditingController(text: initialDob);
+    if (initialDob.isNotEmpty) {
+      _selectedDate = DateTime.tryParse(initialDob);
+    }
   }
 
   @override
@@ -37,7 +46,53 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     _nameController.dispose();
     _phoneController.dispose();
     _educationController.dispose();
+    _dobController.dispose();
     super.dispose();
+  }
+
+  Future<void> _selectDateOfBirth() async {
+    final now = DateTime.now();
+    final initialDate = _selectedDate ?? DateTime(2000, 1, 1);
+    final firstDate = DateTime(1920);
+    final lastDate = now;
+
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: initialDate.isAfter(lastDate) ? lastDate : initialDate,
+      firstDate: firstDate,
+      lastDate: lastDate,
+      helpText: 'Select Date of Birth',
+      confirmText: 'Select',
+      cancelText: 'Cancel',
+      builder: (context, child) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: isDark
+                ? const ColorScheme.dark(
+                    primary: AppColors.primary,
+                    onPrimary: Colors.white,
+                    surface: AppColors.cardDark,
+                    onSurface: AppColors.textPrimaryDark,
+                  )
+                : const ColorScheme.light(
+                    primary: AppColors.primary,
+                    onPrimary: Colors.white,
+                    surface: Colors.white,
+                    onSurface: AppColors.textPrimaryLight,
+                  ),
+          ),
+          child: child!,
+        );
+      },
+    );
+
+    if (pickedDate != null) {
+      setState(() {
+        _selectedDate = pickedDate;
+        _dobController.text = DateFormat('yyyy-MM-dd').format(pickedDate);
+      });
+    }
   }
 
   Future<void> _handleSave() async {
@@ -48,6 +103,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
           fullName: _nameController.text.trim(),
           phoneNumber: _phoneController.text.trim(),
           educationLevel: _educationController.text.trim(),
+          dateOfBirth: _dobController.text.trim(),
         );
     setState(() => _isLoading = false);
 
@@ -89,6 +145,36 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                   keyboardType: TextInputType.phone,
                   prefixIcon: Icons.phone_outlined,
                   validator: Validators.phoneNumber,
+                ),
+                const SizedBox(height: 16),
+                AppTextField(
+                  controller: _dobController,
+                  label: 'Date of Birth',
+                  hintText: 'YYYY-MM-DD',
+                  prefixIcon: Icons.cake_outlined,
+                  readOnly: true,
+                  onTap: _selectDateOfBirth,
+                  suffixIcon: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (_dobController.text.isNotEmpty)
+                        IconButton(
+                          tooltip: 'Clear birth date',
+                          icon: const Icon(Icons.close_rounded, size: 18),
+                          onPressed: () {
+                            setState(() {
+                              _selectedDate = null;
+                              _dobController.clear();
+                            });
+                          },
+                        ),
+                      IconButton(
+                        tooltip: 'Select birth date',
+                        icon: const Icon(Icons.calendar_month_rounded, size: 20),
+                        onPressed: _selectDateOfBirth,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 16),
                 AppTextField(

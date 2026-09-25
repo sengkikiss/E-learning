@@ -28,6 +28,7 @@ class RemoteProfileDataSource implements ProfileDataSource {
     required String fullName,
     required String phoneNumber,
     required String educationLevel,
+    String? dateOfBirth,
     String? profilePhoto,
   }) async {
     final response = await _client.put(
@@ -37,6 +38,7 @@ class RemoteProfileDataSource implements ProfileDataSource {
         'fullName': fullName,
         'phoneNumber': phoneNumber,
         'educationLevel': educationLevel,
+        'dateOfBirth': dateOfBirth,
         'profilePhoto': profilePhoto,
       },
     );

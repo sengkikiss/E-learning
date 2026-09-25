@@ -18,6 +18,7 @@ class ProfileNotifier extends StateNotifier<AsyncValue<Student?>> {
     required String fullName,
     required String phoneNumber,
     required String educationLevel,
+    String? dateOfBirth,
     String? profilePhoto,
   }) async {
     state = const AsyncValue.loading();
@@ -30,6 +31,7 @@ class ProfileNotifier extends StateNotifier<AsyncValue<Student?>> {
             fullName: fullName,
             phoneNumber: phoneNumber,
             educationLevel: educationLevel,
+            dateOfBirth: dateOfBirth,
             profilePhoto: profilePhoto,
           );
 

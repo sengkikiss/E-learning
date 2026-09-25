@@ -19,6 +19,7 @@ class RouteNames {
 
   // Courses & Categories
   static const String courseDetail = '/courses/:courseId';
+  static const String coursePayment = '/payment/:courseId';
   static const String courseSearch = '/search';
   static const String categoryCourses = '/categories/:categoryId';
 

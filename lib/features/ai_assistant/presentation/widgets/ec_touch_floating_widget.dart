@@ -112,7 +112,7 @@ class _EcTouchFloatingWidgetState extends State<EcTouchFloatingWidget>
             },
             child: ScaleTransition(
               scale: _pulseAnimation,
-              child: SizedBox(
+              child: Container( 
                 width: _buttonSize,
                 height: _buttonSize,
                 decoration: BoxDecoration(

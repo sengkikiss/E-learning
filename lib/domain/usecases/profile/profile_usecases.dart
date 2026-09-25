@@ -19,6 +19,7 @@ class UpdateProfileUseCase {
     required String fullName,
     required String phoneNumber,
     required String educationLevel,
+    String? dateOfBirth,
     String? profilePhoto,
   }) {
     return repository.updateProfile(
@@ -26,6 +27,7 @@ class UpdateProfileUseCase {
       fullName: fullName,
       phoneNumber: phoneNumber,
       educationLevel: educationLevel,
+      dateOfBirth: dateOfBirth,
       profilePhoto: profilePhoto,
     );
   }

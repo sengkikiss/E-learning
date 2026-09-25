@@ -294,19 +294,34 @@ class _CourseDetailScreenState extends ConsumerState<CourseDetailScreen> with Si
                               fontWeight: FontWeight.w800,
                             ),
                           ),
+                          if (!course.isFree)
+                            Text(
+                              '≈ ៛${(course.price * 4100).round().toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (m) => '${m[1]},')}',
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? AppColors.textMutedDark : AppColors.textMutedLight,
+                              ),
+                            ),
                         ],
                       ),
-                      const SizedBox(width: 24),
+                      const SizedBox(width: 20),
                       Expanded(
                         child: AppButton(
-                          text: isEnrolled ? 'Continue Learning' : (course.isFree ? 'Enroll for Free' : 'Enroll Now'),
+                          text: isEnrolled
+                              ? 'Continue Learning'
+                              : (course.isFree ? 'Enroll for Free' : 'Pay & Enroll Now'),
                           isLoading: enrollmentState.isLoading,
-                          icon: isEnrolled ? Icons.play_arrow_rounded : Icons.school_rounded,
+                          icon: isEnrolled
+                              ? Icons.play_arrow_rounded
+                              : (course.isFree ? Icons.school_rounded : Icons.payment_rounded),
                           onPressed: () {
                             if (isEnrolled) {
                               context.push('/learning/${course.id}');
-                            } else {
+                            } else if (course.isFree) {
                               _handleEnroll(context);
+                            } else {
+                              context.push('/payment/${course.id}');
                             }
                           },
                         ),

@@ -7,6 +7,7 @@ abstract class ProfileRepository {
     required String fullName,
     required String phoneNumber,
     required String educationLevel,
+    String? dateOfBirth,
     String? profilePhoto,
   });
 }

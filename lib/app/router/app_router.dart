@@ -19,6 +19,7 @@ import '../../features/favorites/presentation/screens/favorites_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/profile/presentation/screens/edit_profile_screen.dart';
 import '../../features/courses/presentation/screens/course_detail_screen.dart';
+import '../../features/payment/presentation/screens/course_payment_screen.dart';
 import '../../features/courses/presentation/screens/course_search_screen.dart';
 import '../../features/courses/presentation/screens/courses_by_category_screen.dart';
 import '../../features/lessons/presentation/screens/lesson_detail_screen.dart';
@@ -137,6 +138,13 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) {
           final courseId = state.pathParameters['courseId'] ?? '';
           return CourseDetailScreen(courseId: courseId);
+        },
+      ),
+      GoRoute(
+        path: RouteNames.coursePayment,
+        builder: (context, state) {
+          final courseId = state.pathParameters['courseId'] ?? '';
+          return CoursePaymentScreen(courseId: courseId);
         },
       ),
       GoRoute(

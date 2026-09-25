@@ -19,6 +19,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
     required String fullName,
     required String phoneNumber,
     required String educationLevel,
+    String? dateOfBirth,
     String? profilePhoto,
   }) async {
     final model = await _dataSource.updateProfile(
@@ -26,6 +27,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
       fullName: fullName,
       phoneNumber: phoneNumber,
       educationLevel: educationLevel,
+      dateOfBirth: dateOfBirth,
       profilePhoto: profilePhoto,
     );
     return model.toEntity();
